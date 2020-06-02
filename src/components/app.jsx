@@ -20,8 +20,9 @@ class App extends Component {
       q: query,
       rating: 'g',
       limit: 10
-    }, (error, result) => {
-      this.setState({
+    }, (err, result) => {
+      if (err) console.error(err)
+      return this.setState({
         gifs: result.data
       });
     });
