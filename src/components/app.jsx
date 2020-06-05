@@ -29,9 +29,9 @@ class App extends Component {
   }
 
   clickedGif = (id) => {
-    this.setState({selectedGifId: id})
-    // id.preventDefault();
-    // console.log(id);
+    this.setState({
+      selectedGifId: id
+    });
   }
 
   render() {
@@ -40,11 +40,11 @@ class App extends Component {
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif clickedGif={this.clickedGif} id={this.state.selectedGifId} />
+            <Gif id={this.state.selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} />
+          <GifList gifs={this.state.gifs} clickedGif={this.clickedGif} />
         </div>
       </div>
       );

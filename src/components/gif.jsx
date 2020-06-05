@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 class Gif extends Component {
 
   handleTheClick = () => {
-    console.log(this.props.id);
-    // this.props.clickedGif(click.currentTarget)
-    // this.props.clickedGif()
-
+    if (this.props.clickedGif) {
+      this.props.clickedGif(this.props.id);
+    }
   }
 
   render() {
+
 
     const src = `https://media.giphy.com/media/${this.props.id}/giphy.gif`;
 
